@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { v1 as uuidv1 } from "uuid";
 import "./App.css";
 
 import EntryForm from "./components/EntryForm";
@@ -6,15 +7,10 @@ import Todo from "./components/Todo";
 
 export default class App extends Component {
   state = {
-    todos: [
-      { id: 1, text: "Walk the dog", completed: true },
-      { id: 2, text: "Wash dishes", completed: false },
-      { id: 3, text: "Do something...", completed: false },
-      { id: 4, text: "aabbava", completed: false },
-    ],
+    todos: [],
   };
   onTodoAdd(text) {
-    const newTodo = { id: 5, text: text };
+    const newTodo = { id: uuidv1(), text: text };
     this.setState({ todos: [...this.state.todos, newTodo] });
   }
   onCheckboxChange(id) {
@@ -50,7 +46,15 @@ export default class App extends Component {
             <button className="filters__btn">Completed</button>
           </div>
           <EntryForm handleSubmit={(text) => this.onTodoAdd(text)} />
-          <ul className="todo-list">{this.renderTodos()}</ul>
+          <ul className="todo-list">
+            {this.state.todos.length > 0 ? (
+              this.renderTodos()
+            ) : (
+              <p className="empty-list">
+                No todos found. Please add something :)
+              </p>
+            )}
+          </ul>
         </main>
         <footer>Adam Wojnicki @ DevChallenges.io</footer>
       </div>
