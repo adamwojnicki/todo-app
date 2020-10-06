@@ -107,3 +107,23 @@ input {
   font-size: 1.4rem;
 }
 /* FORM END */
+
+/* LIST */
+.todo-list {
+  width: 100%;
+  margin-top: 3.2rem;
+  color: var(--black);
+  font-size: 1.8rem;
+}
+.todo-list__item {
+  display: flex;
+  align-items: center;
+}
+.todo-list__item.completed {
+  color: var(--grey-light1);
+  text-decoration: line-through;
+}
+.todo-list__checkbox {
+  margin-right: 8px;
+}
+/* LIST END */

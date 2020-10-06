@@ -25,9 +25,16 @@ export default class App extends Component {
             </button>
           </form>
           <ul className="todo-list">
-            <li className="todo-list__item">Todo 1</li>
-            <li className="todo-list__item">Todo 2</li>
-            <li className="todo-list__item">Todo 3</li>
+            <li className="todo-list__item">
+              <input className="todo-list__checkbox" type="checkbox" /> Todo 1
+            </li>
+            <li className="todo-list__item">
+              <input className="todo-list__checkbox" type="checkbox" /> Todo 2
+            </li>
+            <li className="todo-list__item completed">
+              <input className="todo-list__checkbox" type="checkbox" checked />
+              Todo 3
+            </li>
           </ul>
         </main>
         <footer>Adam Wojnicki @ DevChallenges.io</footer>
