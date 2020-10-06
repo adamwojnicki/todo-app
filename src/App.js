@@ -13,6 +13,10 @@ export default class App extends Component {
       { id: 4, text: "aabbava", completed: false },
     ],
   };
+  onTodoAdd(text) {
+    const newTodo = { id: 5, text: text };
+    this.setState({ todos: [...this.state.todos, newTodo] });
+  }
   onCheckboxChange(id) {
     const todoIdx = this.state.todos.findIndex((todo) => todo.id === id);
     const newTodos = [...this.state.todos];
@@ -26,7 +30,11 @@ export default class App extends Component {
   }
   renderTodos() {
     return this.state.todos.map((todo) => (
-      <Todo todo={todo} onCheck={() => this.onCheckboxChange(todo.id)} />
+      <Todo
+        key={todo.id}
+        todo={todo}
+        onCheck={() => this.onCheckboxChange(todo.id)}
+      />
     ));
   }
   render() {
@@ -41,7 +49,7 @@ export default class App extends Component {
             <button className="filters__btn">Active</button>
             <button className="filters__btn">Completed</button>
           </div>
-          <EntryForm />
+          <EntryForm handleSubmit={(text) => this.onTodoAdd(text)} />
           <ul className="todo-list">{this.renderTodos()}</ul>
         </main>
         <footer>Adam Wojnicki @ DevChallenges.io</footer>
