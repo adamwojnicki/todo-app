@@ -25,4 +25,25 @@
 body {
   font-family: var(--sans-serif);
 }
+
+ul,
+li {
+  list-style-type: none;
+}
+
+button {
+  border: none;
+  background: transparent;
+}
+
+input {
+  border: none;
+  background: transparent;
+}
+
+.container {
+  width: 90%;
+  max-width: 720px;
+  margin: auto;
+}
 /* COMMON STYLES END */

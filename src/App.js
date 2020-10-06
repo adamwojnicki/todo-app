@@ -16,7 +16,7 @@ export default class App extends Component {
           </div>
           <form>
             <input type="text" />
-            <input type="submit" value="Add" />
+            <button>Submit</button>
           </form>
           <ul className="todo-list">
             <li className="todo-list__item">Todo 1</li>
