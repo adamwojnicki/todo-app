@@ -14,9 +14,11 @@ export default class App extends Component {
             <button className="filters__btn">Active</button>
             <button className="filters__btn">Completed</button>
           </div>
-          <form>
-            <input type="text" />
-            <button>Submit</button>
+          <form className="entry-form">
+            <input className="entry-form__input" type="text" />
+            <button className="entry-form__btn" type="submit">
+              Submit
+            </button>
           </form>
           <ul className="todo-list">
             <li className="todo-list__item">Todo 1</li>
