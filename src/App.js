@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import "./App.css";
 
+import Todo from "./components/Todo";
+
 export default class App extends Component {
   state = {
     todos: [
@@ -23,18 +25,7 @@ export default class App extends Component {
   }
   renderTodos() {
     return this.state.todos.map((todo) => (
-      <li
-        key={todo.id}
-        className={`todo-list__item ${todo.completed ? "completed" : ""}`}
-      >
-        <input
-          className="todo-list__checkbox"
-          type="checkbox"
-          checked={todo.completed}
-          onChange={() => this.onCheckboxChange(todo.id)}
-        />
-        {todo.text}
-      </li>
+      <Todo todo={todo} onCheck={() => this.onCheckboxChange(todo.id)} />
     ));
   }
   render() {
