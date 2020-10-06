@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 
+import EntryForm from "./components/EntryForm";
 import Todo from "./components/Todo";
 
 export default class App extends Component {
@@ -40,16 +41,7 @@ export default class App extends Component {
             <button className="filters__btn">Active</button>
             <button className="filters__btn">Completed</button>
           </div>
-          <form className="entry-form">
-            <input
-              className="entry-form__input"
-              placeholder="Add details..."
-              type="text"
-            />
-            <button className="entry-form__btn" type="submit">
-              Submit
-            </button>
-          </form>
+          <EntryForm />
           <ul className="todo-list">{this.renderTodos()}</ul>
         </main>
         <footer>Adam Wojnicki @ DevChallenges.io</footer>
