@@ -2,6 +2,33 @@ import React, { Component } from "react";
 import "./App.css";
 
 export default class App extends Component {
+  state = {
+    todos: [
+      { id: 1, text: "Walk the dog", completed: true },
+      { id: 2, text: "Wash dishes", completed: false },
+      { id: 3, text: "Do something...", completed: false },
+      { id: 4, text: "aabbava", completed: false },
+    ],
+  };
+  onCheckboxChange() {
+    return;
+  }
+  renderTodos() {
+    return this.state.todos.map((todo) => (
+      <li
+        key={todo.id}
+        className={`todo-list__item ${todo.completed ? "completed" : ""}`}
+      >
+        <input
+          className="todo-list__checkbox"
+          type="checkbox"
+          checked={todo.completed}
+          onChange={() => this.onCheckboxChange()}
+        />
+        {todo.text}
+      </li>
+    ));
+  }
   render() {
     return (
       <div className="container">
@@ -24,18 +51,7 @@ export default class App extends Component {
               Submit
             </button>
           </form>
-          <ul className="todo-list">
-            <li className="todo-list__item">
-              <input className="todo-list__checkbox" type="checkbox" /> Todo 1
-            </li>
-            <li className="todo-list__item">
-              <input className="todo-list__checkbox" type="checkbox" /> Todo 2
-            </li>
-            <li className="todo-list__item completed">
-              <input className="todo-list__checkbox" type="checkbox" checked />
-              Todo 3
-            </li>
-          </ul>
+          <ul className="todo-list">{this.renderTodos()}</ul>
         </main>
         <footer>Adam Wojnicki @ DevChallenges.io</footer>
       </div>
