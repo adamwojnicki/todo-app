@@ -5,8 +5,8 @@ export default class App extends Component {
   render() {
     return (
       <div className="container">
-        <header>
-          <h1>#todo</h1>
+        <header className="header">
+          <h1 className="header__logo">#todo</h1>
         </header>
         <main>
           <div className="filters">
