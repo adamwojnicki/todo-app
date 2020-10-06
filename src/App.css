@@ -1,5 +1,17 @@
+/* IMPORTS AND STYLE RESETS */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&family=Raleway:wght@700&display=swap");
+
 :root {
   font-size: 10px;
+  --sans-serif: "Montserrat", Arial, Helavetica, sans-serif;
+  --brand: "Raleway", "Times New Roman", Times, serif;
+
+  --black: #000;
+  --grey-dark: #333;
+  --grey-light1: #828282;
+  --grey-light2: #bdbdbd;
+  --white: #ffffff;
+  --primary: #2f80ed;
 }
 
 * {
@@ -7,3 +19,10 @@
   padding: 0;
   box-sizing: border-box;
 }
+/* IMPORTS AND STYLE RESETS END */
+
+/* COMMON STYLES */
+body {
+  font-family: var(--sans-serif);
+}
+/* COMMON STYLES END */
