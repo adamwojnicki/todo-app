@@ -50,6 +50,11 @@ input {
   width: 90%;
   max-width: 720px;
   margin: auto;
+  min-height: 100vh;
+  position: relative;
+}
+main {
+  padding-bottom: 4.8rem;
 }
 /* COMMON STYLES END */
 
@@ -118,6 +123,7 @@ input {
 .todo-list__item {
   display: flex;
   align-items: center;
+  margin-bottom: 3rem;
 }
 .todo-list__item.completed {
   color: var(--grey-light1);
@@ -127,3 +133,18 @@ input {
   margin-right: 8px;
 }
 /* LIST END */
+
+/* FOOTER */
+footer {
+  width: 100%;
+  text-align: center;
+  height: 4.8rem;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--grey-light1);
+  font-size: 1.4rem;
+}
+/* FOOTER END */
