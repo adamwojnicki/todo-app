@@ -15,7 +15,11 @@ export default class App extends Component {
             <button className="filters__btn">Completed</button>
           </div>
           <form className="entry-form">
-            <input className="entry-form__input" type="text" />
+            <input
+              className="entry-form__input"
+              placeholder="Add details..."
+              type="text"
+            />
             <button className="entry-form__btn" type="submit">
               Submit
             </button>

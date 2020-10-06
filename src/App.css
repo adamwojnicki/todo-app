@@ -81,3 +81,29 @@ input {
   border-bottom: 2px solid var(--primary);
 }
 /* FILTERS END */
+
+/* FORM */
+.entry-form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 1.8rem;
+}
+
+.entry-form__input {
+  width: 80%;
+  border: 1px solid var(--grey-light1);
+  border-radius: 14px;
+  padding: 2rem;
+  font-size: 1.4rem;
+}
+
+.entry-form__btn {
+  width: 20%;
+  background: var(--primary);
+  color: var(--white);
+  margin-left: 14px;
+  border-radius: 14px;
+  font-size: 1.4rem;
+}
+/* FORM END */
