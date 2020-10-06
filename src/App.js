@@ -10,8 +10,16 @@ export default class App extends Component {
       { id: 4, text: "aabbava", completed: false },
     ],
   };
-  onCheckboxChange() {
-    return;
+  onCheckboxChange(id) {
+    const todoIdx = this.state.todos.findIndex((todo) => todo.id === id);
+    const newTodos = [...this.state.todos];
+    newTodos[todoIdx] = {
+      ...newTodos[todoIdx],
+      completed: !newTodos[todoIdx].completed,
+    };
+    this.setState({
+      todos: newTodos,
+    });
   }
   renderTodos() {
     return this.state.todos.map((todo) => (
@@ -23,7 +31,7 @@ export default class App extends Component {
           className="todo-list__checkbox"
           type="checkbox"
           checked={todo.completed}
-          onChange={() => this.onCheckboxChange()}
+          onChange={() => this.onCheckboxChange(todo.id)}
         />
         {todo.text}
       </li>
