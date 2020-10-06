@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 
 export default ({ handleSubmit }) => {
+  const [text, setText] = useState("");
   const onSubmitClick = (e, text) => {
     e.preventDefault();
     handleSubmit(text);
+    setText("");
   };
-  const [text, setText] = useState("");
   return (
     <form className="entry-form" onSubmit={(e) => onSubmitClick(e, text)}>
       <input
