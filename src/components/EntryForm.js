@@ -15,6 +15,7 @@ export default ({ handleSubmit }) => {
         type="text"
         value={text}
         onChange={(e) => setText(e.target.value)}
+        required="required"
       />
       <button className="entry-form__btn" type="submit">
         Submit

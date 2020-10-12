@@ -3,7 +3,7 @@ import { v1 as uuidv1 } from "uuid";
 import "./App.css";
 
 import EntryForm from "./components/EntryForm";
-import Todo from "./components/Todo";
+import TodoList from "./components/TodoList";
 
 export default class App extends Component {
   state = {
@@ -24,15 +24,6 @@ export default class App extends Component {
       todos: newTodos,
     });
   }
-  renderTodos() {
-    return this.state.todos.map((todo) => (
-      <Todo
-        key={todo.id}
-        todo={todo}
-        onCheck={() => this.onCheckboxChange(todo.id)}
-      />
-    ));
-  }
   render() {
     return (
       <div className="container">
@@ -46,15 +37,7 @@ export default class App extends Component {
             <button className="filters__btn">Completed</button>
           </div>
           <EntryForm handleSubmit={(text) => this.onTodoAdd(text)} />
-          <ul className="todo-list">
-            {this.state.todos.length > 0 ? (
-              this.renderTodos()
-            ) : (
-              <p className="empty-list">
-                No todos found. Please add something :)
-              </p>
-            )}
-          </ul>
+          <TodoList todos={this.state.todos} />
         </main>
         <footer>Adam Wojnicki @ DevChallenges.io</footer>
       </div>
