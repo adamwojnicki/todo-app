@@ -26,7 +26,8 @@ export default class App extends Component {
     });
   }
   onTodoDelete(id) {
-    console.log(id);
+    const newTodos = this.state.todos.filter(todo => todo.id !== id)
+    this.setState({todos: newTodos})
   }
   filteredTodos = () => {
     switch (this.state.filter) {
