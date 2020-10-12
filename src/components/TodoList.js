@@ -9,6 +9,7 @@ export default class TodoList extends Component {
         key={todo.id}
         todo={todo}
         onCheck={() => this.props.onCheck(todo.id)}
+        onDelete={() => this.props.onDelete(todo.id)}
       />
     ));
   }

@@ -1,6 +1,6 @@
 import React from "react";
 
-export default ({ todo, onCheck }) => {
+export default ({ todo, onCheck, onDelete }) => {
   return (
     <li className={`todo-list__item ${todo.completed ? "completed" : ""}`}>
       <label>
@@ -12,7 +12,7 @@ export default ({ todo, onCheck }) => {
         />
         {todo.text}
       </label>
-      {todo.completed ? (<button>
+      {todo.completed ? (<button onClick={onDelete}>
         <i className="material-icons">delete_outline</i>
       </button>) : null }
       

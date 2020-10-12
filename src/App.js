@@ -25,6 +25,9 @@ export default class App extends Component {
       todos: newTodos,
     });
   }
+  onTodoDelete(id) {
+    console.log(id);
+  }
   filteredTodos = () => {
     switch (this.state.filter) {
       case "active":
@@ -51,6 +54,7 @@ export default class App extends Component {
           <TodoList
             todos={this.filteredTodos()}
             onCheck={(id) => this.onTodoComplete(id)}
+            onDelete={(id) => this.onTodoDelete(id)}
           />
         </main>
         <footer>Adam Wojnicki @ DevChallenges.io</footer>
