@@ -8,9 +8,10 @@ import TodoList from "./components/TodoList";
 export default class App extends Component {
   state = {
     todos: [],
+    filter: "all"
   };
   onTodoAdd(text) {
-    const newTodo = { id: uuidv1(), text: text };
+    const newTodo = { id: uuidv1(), text: text, completed: false };
     this.setState({ todos: [...this.state.todos, newTodo] });
   }
   onTodoComplete(id) {
@@ -24,6 +25,16 @@ export default class App extends Component {
       todos: newTodos,
     });
   }
+  filteredTodos = () => {
+    switch (this.state.filter) {
+      case "active":
+        return this.state.todos.filter(todo => todo.completed===false)
+      case "completed":
+        return this.state.todos.filter(todo => todo.completed===true)  
+      default:
+        return this.state.todos
+    }
+  }
   render() {
     return (
       <div className="container">
@@ -32,13 +43,13 @@ export default class App extends Component {
         </header>
         <main>
           <div className="filters">
-            <button className="filters__btn active">All</button>
-            <button className="filters__btn">Active</button>
-            <button className="filters__btn">Completed</button>
+            <button onClick={()=>this.setState({filter:"all"})} className="filters__btn">All</button>
+            <button onClick={()=>this.setState({filter:"active"})} className="filters__btn">Active</button>
+            <button onClick={()=>this.setState({filter:"completed"})} className="filters__btn">Completed</button>
           </div>
           <EntryForm handleSubmit={(text) => this.onTodoAdd(text)} />
           <TodoList
-            todos={this.state.todos}
+            todos={this.filteredTodos()}
             onCheck={(id) => this.onTodoComplete(id)}
           />
         </main>
