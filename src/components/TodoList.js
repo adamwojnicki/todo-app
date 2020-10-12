@@ -8,7 +8,7 @@ export default class TodoList extends Component {
       <Todo
         key={todo.id}
         todo={todo}
-        onCheck={() => this.onCheckboxChange(todo.id)}
+        onCheck={() => this.props.onCheck(todo.id)}
       />
     ));
   }

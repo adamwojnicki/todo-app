@@ -13,7 +13,7 @@ export default class App extends Component {
     const newTodo = { id: uuidv1(), text: text };
     this.setState({ todos: [...this.state.todos, newTodo] });
   }
-  onCheckboxChange(id) {
+  onTodoComplete(id) {
     const todoIdx = this.state.todos.findIndex((todo) => todo.id === id);
     const newTodos = [...this.state.todos];
     newTodos[todoIdx] = {
@@ -37,7 +37,10 @@ export default class App extends Component {
             <button className="filters__btn">Completed</button>
           </div>
           <EntryForm handleSubmit={(text) => this.onTodoAdd(text)} />
-          <TodoList todos={this.state.todos} />
+          <TodoList
+            todos={this.state.todos}
+            onCheck={(id) => this.onTodoComplete(id)}
+          />
         </main>
         <footer>Adam Wojnicki @ DevChallenges.io</footer>
       </div>
