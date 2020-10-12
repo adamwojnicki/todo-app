@@ -43,9 +43,9 @@ export default class App extends Component {
         </header>
         <main>
           <div className="filters">
-            <button onClick={()=>this.setState({filter:"all"})} className="filters__btn">All</button>
-            <button onClick={()=>this.setState({filter:"active"})} className="filters__btn">Active</button>
-            <button onClick={()=>this.setState({filter:"completed"})} className="filters__btn">Completed</button>
+            <button onClick={()=>this.setState({filter:"all"})} className={`filters__btn ${this.state.filter === "all" ? "active" : ""}`}>All</button>
+            <button onClick={()=>this.setState({filter:"active"})} className={`filters__btn ${this.state.filter === "active" ? "active" : ""}`}>Active</button>
+            <button onClick={()=>this.setState({filter:"completed"})} className={`filters__btn ${this.state.filter === "completed" ? "active" : ""}`}>Completed</button>
           </div>
           <EntryForm handleSubmit={(text) => this.onTodoAdd(text)} />
           <TodoList
