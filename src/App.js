@@ -45,7 +45,11 @@ export default class App extends Component {
   }
   componentDidMount() {
     const todos = JSON.parse(localStorage.getItem("todos"))
-    this.setState({todos: todos})
+    if (todos) {
+      this.setState({todos: todos})
+    } else {
+      this.setState({todos: []})
+    }
   }
   componentDidUpdate() {
     localStorage.setItem("todos", JSON.stringify(this.state.todos))
