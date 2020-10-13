@@ -169,3 +169,23 @@ footer {
   font-size: 1.4rem;
 }
 /* FOOTER END */
+
+@media (max-width: 550px) {
+  :root {
+    font-size: 8px;
+  }
+}
+@media (max-width: 370px) {
+  .entry-form {
+    flex-direction: column;
+  }
+  .entry-form__input,
+  .entry-form__btn {
+    width: 100%;
+  }
+  .entry-form__btn {
+    margin-left: 0;
+    margin-top: 9px;
+    padding: 2rem;
+  }
+}
