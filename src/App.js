@@ -56,6 +56,7 @@ export default class App extends Component {
             todos={this.filteredTodos()}
             onCheck={(id) => this.onTodoComplete(id)}
             onDelete={(id) => this.onTodoDelete(id)}
+            filter={this.state.filter}
           />
         </main>
         <footer>Adam Wojnicki @ DevChallenges.io</footer>

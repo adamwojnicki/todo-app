@@ -12,6 +12,7 @@
   --grey-light2: #bdbdbd;
   --white: #ffffff;
   --primary: #2f80ed;
+  --danger: #eb5757;
 }
 
 * {
@@ -133,7 +134,26 @@ main {
 .todo-list__checkbox {
   margin-right: 8px;
 }
+.todo-list__delete {
+  background: var(--danger);
+  color: var(--white);
+  border-radius: 14px;
+  font-size: 1.4rem;
+  padding: 1.2rem 2.6rem;
+  display: flex;
+  align-items: center;
+  float: right;
+}
 /* LIST END */
+
+/* EMPTY LIST MSG */
+.empty-list {
+  text-align: center;
+  margin: 64px auto;
+  color: var(--grey-light1);
+  font-size: 2.4rem;
+}
+/* EMPTY LIST MSG END */
 
 /* FOOTER */
 footer {
@@ -149,12 +169,3 @@ footer {
   font-size: 1.4rem;
 }
 /* FOOTER END */
-
-/* EMPTY LIST MSG */
-.empty-list {
-  text-align: center;
-  margin-top: 64px;
-  color: var(--grey-light1);
-  font-size: 2.4rem;
-}
-/* EMPTY LIST MSG END */
