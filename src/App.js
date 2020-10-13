@@ -43,6 +43,13 @@ export default class App extends Component {
         return this.state.todos
     }
   }
+  componentDidMount() {
+    const todos = JSON.parse(localStorage.getItem("todos"))
+    this.setState({todos: todos})
+  }
+  componentDidUpdate() {
+    localStorage.setItem("todos", JSON.stringify(this.state.todos))
+  }
   render() {
     return (
       <div className="container">
@@ -55,7 +62,11 @@ export default class App extends Component {
             <button onClick={()=>this.setState({filter:"active"})} className={`filters__btn ${this.state.filter === "active" ? "active" : ""}`}>Active</button>
             <button onClick={()=>this.setState({filter:"completed"})} className={`filters__btn ${this.state.filter === "completed" ? "active" : ""}`}>Completed</button>
           </div>
-          <EntryForm handleSubmit={(text) => this.onTodoAdd(text)} />
+          {this.state.filter !== "completed" ? (
+            <EntryForm handleSubmit={(text) => this.onTodoAdd(text)} />
+          ) : (
+            ""
+          )}
           <TodoList
             todos={this.filteredTodos()}
             onCheck={(id) => this.onTodoComplete(id)}
