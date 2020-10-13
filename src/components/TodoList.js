@@ -10,6 +10,7 @@ export default class TodoList extends Component {
         todo={todo}
         onCheck={() => this.props.onCheck(todo.id)}
         onDelete={() => this.props.onDelete(todo.id)}
+        filter={this.props.filter}
       />
     ));
   }
