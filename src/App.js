@@ -29,6 +29,10 @@ export default class App extends Component {
     const newTodos = this.state.todos.filter(todo => todo.id !== id)
     this.setState({todos: newTodos})
   }
+  onClearCompleted() {
+    const newTodos = this.state.todos.filter(todo => todo.completed === false)
+    this.setState({todos: newTodos})
+  }
   filteredTodos = () => {
     switch (this.state.filter) {
       case "active":
@@ -56,6 +60,7 @@ export default class App extends Component {
             todos={this.filteredTodos()}
             onCheck={(id) => this.onTodoComplete(id)}
             onDelete={(id) => this.onTodoDelete(id)}
+            onClearCompleted={() => this.onClearCompleted()}
             filter={this.state.filter}
           />
         </main>

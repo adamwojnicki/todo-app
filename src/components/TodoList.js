@@ -24,7 +24,9 @@ export default class TodoList extends Component {
           )}
         </ul>
         {this.props.filter === "completed" && this.props.todos.length > 0 ? (
-          <button className="todo-list__delete"><i className="material-icons">delete_outline</i> delete all</button>
+          <button className="todo-list__delete" onClick={this.props.onClearCompleted}>
+            <i className="material-icons">delete_outline</i>delete all
+          </button>
         ) : (
           ""
         )}
