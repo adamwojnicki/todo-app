@@ -1,8 +1,8 @@
 ## Todo app
 
-This is an assignment for (DevChallenges.io)[https://www.devchallenges.io] Challenge.
+This is an assignment for [DevChallenges.io](https://www.devchallenges.io) Challenge.
 
-Live demo can be seen (here)[https://objective-mirzakhani-48ca9a.netlify.app/]
+Live demo can be seen [here](https://objective-mirzakhani-48ca9a.netlify.app/)
 
 You can:
 
